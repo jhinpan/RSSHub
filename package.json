@@ -27,7 +27,7 @@
     ],
     "scripts": {
         "build": "npm run build:routes && tsdown",
-        "build:routes": "tsx scripts/workflow/build-routes.ts",
+        "build:routes": "cross-env NODE_ENV=development tsx scripts/workflow/build-routes.ts",
         "build:vercel": "npm run build:routes && tsdown --config ./tsdown-vercel.config.ts && mv dist/server.mjs dist/index.mjs && tsx scripts/workflow/build-vercel-packagejson.ts",
         "build:docs": "npm run build:routes && tsx scripts/workflow/build-docs.ts",
         "build:lib": "npm run build:routes && tsdown --config ./tsdown-lib.config.ts",
@@ -138,7 +138,7 @@
         "tsx": "4.20.6",
         "twitter-api-v2": "1.28.0",
         "ufo": "1.6.1",
-        "undici": "7.16.0",
+        "undici": "6.21.0",
         "uuid": "13.0.0",
         "winston": "3.18.3",
         "xxhash-wasm": "1.1.0",
@@ -201,7 +201,8 @@
         "unified": "11.0.5",
         "vite-tsconfig-paths": "5.1.4",
         "vitest": "4.0.9",
-        "yaml-eslint-parser": "1.3.1"
+        "yaml-eslint-parser": "1.3.1",
+        "node-network-devtools": "1.0.29"
     },
     "packageManager": "pnpm@10.22.0+sha512.bf049efe995b28f527fd2b41ae0474ce29186f7edcb3bf545087bd61fbbebb2bf75362d1307fda09c2d288e1e499787ac12d4fcb617a974718a6051f2eee741c",
     "engines": {
